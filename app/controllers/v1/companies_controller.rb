@@ -1,12 +1,13 @@
 module V1
-    class CompaniesController > ApplicationController
+    class CompaniesController  < ApplicationController
         def create 
-            @company = current_user.companies.build(company_params)
+            company = current_user.companies.build(company_params)
 
-            if @company.save
-                render :create, status: :created
+            if company.save
+                render :create, status: :created, locals: { company: company }
             else 
                 head(:unprocessable_entity)
+            end
         end
 
         def update 

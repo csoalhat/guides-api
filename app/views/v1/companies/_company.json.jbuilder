@@ -1,0 +1,9 @@
+json.call(
+  company,
+  :id,
+  :name,
+  :address,
+  :phone_number,
+  :default_currency,
+  :description
+)
